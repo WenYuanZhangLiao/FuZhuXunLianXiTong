@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+    <style type="text/css">
+         .select * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .select {
+            border: 0px solid #cccccc;
+            float: left;
+            display: inline;
+        }
+
+        .select div {
+            border: 0px solid #f9f9f9;
+            float: left;
+        }
+        /* 子选择器，在FF等非IE浏览器中识别 */
+
+        .select>div {
+            width: 200px;
+            height: 50px;
+            overflow: hidden;
+        }
+        /* 通配选择符，只在IE浏览器中识别 */
+
+        * html .select div select {
+            display: block;
+            float: left;
+            margin: -2px;
+        }
+
+        .select div>select {
+            display: block;
+            width: 140px;
+            height: 35px;
+            font-family: "宋体";
+            font-size: 20px;
+            color: #999999;
+            float: left;
+            margin: -2px;
+            padding: 0px;
+        }
+        .select select>option {
+            text-indent: 2px; //option在FF等非IE浏览器缩进2px
+        }
+
+        -->
+    </style>
+</head>
+
+<body>
+  <form>
+    <div class="select">
+        <p>科目：
+            <div>
+                <select name="科目">
+          <option selected="selected">请选择</option>
+          <option>力量</option>
+          <option>耐力</option>
+          <option>柔韧</option>
+  </select>
+            </div>
+        </p>
+        <br>
+        <p>部位：
+            <div>
+                <select name="部位">
+        <option selected="selected">请选择</option>
+        <option>胸部</option>
+        <option>肩部</option>
+        <option>背部</option>
+        <option>手臂</option>
+        <option>颈部</option>
+        <option>腿部</option>
+        <option>臀部</option>
+        <option>腹部</option>
+        <option>腰部</option>
+</select>
+            </div>
+        </p>
+        <input type="button" value="提交" onclick=window.top.location="../test/1.html";>
+        <input type="reset">
+      </form>
+
+</body>
+<img h >
+</html>
