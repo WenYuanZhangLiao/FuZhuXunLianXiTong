@@ -1,94 +1,404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>选择菜单</title>
+		<script type="text/javascript" src="../../script/jquery-3.0.0.js" ></script>
+		<script type="text/javascript" src="../../script/jquery-3.0.0.min.js" ></script>
+		<script src="../../script/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			body{
+				background-color:#D3D3D3;
+			}
+			.top,.menu_btn {
+				background-color:white ;
+				color: black;
+				padding:10px 10px 15px;
+				margin:15px 5px;
+			}
+			.middle{
+				display: none;
+				background-color:white ;
+				color: black;
+				margin:15px 5px;
+				padding:5px 15px  20px;
+			}
+			.money button,.menu_btn  button{
+				margin: 10px 0.8%;
+				width: 22%;
+				height: 30px;
+				background-color: white;
+				border: 1px solid lightgrey;
+			}
+
+			.middleDetail{
+				width: 30px;
+				margin: 10px 20%;
+			}
+			#pointOut{
+				color: darkorange;
+				padding: 15px;
+			}
+			#bottom{
+
+				width: 50%;
+				height: 80px;
+				margin:0 20%;
+				background-color: orange;
+				font-size:20px ;
+				color: white;
+			}
+			#submit
+			{
+				width: 50%;
+				height: 50px;
+				margin:0 20%;
+				background-color: green;
+				font-size:20px ;
+				color: yellow;
+			}
+			.money .active{color: orange;border: 1px solid orange;background-color: white;}
+
+			.TypeChild li{
+				list-style-type: none;
+			}
+			.money_input{
+				/*background-color: red;*/
+				margin: 10px;
+				text-align: center;
+			}
+			.money_input input{
+				width: 50%;
+				/*background-color: blue;*/
+				margin: 5px;
+				text-align: center;
+				line-height: 20px;
+			}
+			.hidden{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+
+		<input type="text" name="host" id ="host" value="192.168.43.89">
+		<form id='SubmitForm' action="" method='post' onsubmit='return checkForm()'>
+		<div class="Type">
+			<p class="topTitle">请选择训练项目</p>
+			<div class="money">
+				<button type="button" class="menu_btn  active" value="1">力量</button>
+				<button type="button" class="menu_btn " value="2">速度</button>
+				<button type="button" class="menu_btn " value="3">耐力</button>
+				<button type="button" class="menu_btn " value="4">灵敏</button>
+				<button type="button" class="menu_btn " value="5">柔韧</button>
+				<button type="button" class="menu_btn " value="6">新大纲</button>
+			</div>
+		</div>
+		<div class="TypeChild">
+			<ul>
+				<li><div class="top hidden" id="chagerWay1">
+				<p class="topTitle">请选择力量训练部位</p>
+				  <div class="money">
+						<button type="button" class="btn active">力量部位不限</button>
+					<button type="button" class="btn">颈部</button>
+					<button type="button" class="btn">肩部</button>
+					<button type="button" class="btn">胸部</button>
+					<button type="button" class="btn">臀部</button>
+					<button type="button" class="btn">背部</button>
+					<button type="button" class="btn">腹部</button>
+					<button type="button" class="btn">腰部</button>
+					<button type="button" class="btn">手臂</button>
+					<button type="button" class="btn">腿部</button>
+				  </div>
+				</div>
+				</li>
+
+				<li><div class="top hidden" id="chagerWay2">
+				<p class="topTitle">请选择速度训练方式</p>
+				  <div class="money">
+						<button type="button" class="btn active">速度训练不限</button>
+					<button type="button" class="btn">冲刺跑</button>
+					<button type="button" class="btn">折返跑</button>
+
+				  </div>
+				</div></li>
+
+				<li><div class="top hidden" id="chagerWay3">
+				<p class="topTitle">请选择耐力训练方式</p>
+				  <div class="money">
+						<button type="button" class="btn active">耐力训练不限</button>
+					<button type="button" class="btn">间歇跑</button>
+					<button type="button" class="btn">长距离跑</button>
+				  </div>
+				</div></li>
+
+				<li><div class="top hidden" id="chagerWay4">
+				<p class="topTitle">请选择灵敏训练方式</p>
+				  <div class="money">
+						<button type="button" class="btn active">灵敏训练不限</button>
+				  	<button type="button" class="btn">变速变向练习</button>
+						<button type="button" class="btn">灵敏组合性练习</button>
+				  </div>
+				</div></li>
+				<li><div class="top hidden" id="chagerWay5">
+				<p class="topTitle">请选择柔韧训练方式</p>
+				  <div class="money">
+						<button type="button" class="btn active">柔韧训练不限</button>
+				  	<button type="button" class="btn">静力拉伸</button>
+					<button type="button" class="btn">动力拉伸</button>
+				  </div>
+				</div></li>
+				<li><div class="top hidden" id="chagerWay6">
+				<p class="topTitle">请选择新大纲训练科目</p>
+				  <div class="money">
+						<button type="button" class="btn active">大纲科目不限</button>
+				  	<button type="button" class="btn">基础体能训练</button>
+					<button type="button" class="btn">实用技能训练</button>
+					<button type="button" class="btn">岗位能力训练</button>
+					<button type="button" class="btn">综合应用训练</button>
+				  </div>
+				</div></li>
+			</ul>
+		</div>
+		<div class="Ground">
+			<p class="topTitle">请选择训练场地</p>
+			<div class="money">
+				<button type="button" class="GroundButton active" value="0">场地不限</button>
+				<button type="button" class="GroundButton" value="1">田径场</button>
+				<button type="button" class="GroundButton" value="2">障碍场</button>
+				<button type="button" class="GroundButton" value="3">器械场</button>
+				<button type="button" class="GroundButton" value="4">健身房</button>
+				<button type="button" class="GroundButton" value="5">游泳馆</button>
+				<button type="button" class="GroundButton" value="6">养成路</button>
+				<button type="button" class="GroundButton" value="7">室内</button>
+			</div>
+		</div>
+		<div class="GroundChild">
+				<li><div class="top hidden" id="GroundChildWay">
+				<p class="topTitle">请选择室内训练器械</p>
+				  <div class="money">
+					<button type="button" class="GroundChildButton active">器械不限</button>
+					<button type="button" class="GroundChildButton">徒手</button>
+					<button type="button" class="GroundChildButton">弹力带</button>
+					<button type="button" class="GroundChildButton">泡沫轴</button>
+					<button type="button" class="GroundChildButton">哑铃</button>
+				  </div>
+				</div>
+				</li>
+
+		</div>
+
+		<div class="Duration">
+			<p class="topTitle">请选择训练时长</p>
+			<div class="money">
+				<button type="button" class="DurationButton  active" value="0">时长不限</button>
+				<button type="button" class="DurationButton " value="1">30m</button>
+				<button type="button" class="DurationButton " value="2">45m</button>
+				<button type="button" class="DurationButton " value="3">60m</button>
+				<button type="button" class="DurationButton " value="4">90m</button>
+			</div>
+		</div>
+
+		<div class="Strength">
+			<p class="topTitle">请选择训练强度</p>
+			<div class="money">
+				<button type="button" class="StrengthButton  active" value="0">强度不限</button>
+				<button type="button" class="StrengthButton " value="1">轻度</button>
+				<button type="button" class="StrengthButton " value="2">中度</button>
+				<button type="button" class="StrengthButton " value="3">重度</button>
+				<button type="button" class="StrengthButton " value="4">超高强度</button>
+
+			</div>
+		</div>
 
 
-<head>
-    <meta charset="UTF-8">
-    <title>select</title>
-    <style type="text/css">
-         .select * {
-            margin: 0;
-            padding: 0;
-        }
+		<p id="pointOut">请根据需要选择训练科目的参数</p>
 
-        .select {
-            border: 0px solid #cccccc;
-            float: left;
-            display: inline;
-        }
+		<input type='hidden' name='TypeForm'  id='TypeForm' value=''/>
+		<input type='hidden' name='TypeChildForm' id='TypeChildForm'  value=''/>
+		<input type='hidden' name='GroundForm' id='GroundForm'  value=''/>
+		<input type='hidden' name='GroundChildForm' id='GroundChildForm'  value=''/>
+		<input type='hidden' name='DurationForm' id='DurationForm'  value=''/>
+		<input type='hidden' name='StrengthForm' id='StrengthForm'  value=''/>
+		<button type='submit' id="bottom" onclick="validate();" >一键查询</button>
 
-        .select div {
-            border: 0px solid #f9f9f9;
-            float: left;
-        }
-        /* 子选择器，在FF等非IE浏览器中识别 */
+		<form/>
+	</body>
 
-        .select>div {
-            width: 200px;
-            height: 50px;
-            overflow: hidden;
-        }
-        /* 通配选择符，只在IE浏览器中识别 */
+	<script type="text/javascript">
+	var index=0;
+	var money=0;
+	var chargeWayIndex=0;
+	var GroundIndex=0;
+	var GroundChildIndex=0;
+	var DurationIndex=0;
+	var StrengthIndex=0;
+	var TypeNum=[10,3,3,3,3,5];
+	var result=new Array();
 
-        * html .select div select {
-            display: block;
-            float: left;
-            margin: -2px;
-        }
+		$(function()
+		{
+	//点击确定按钮，获取菜单参数
+			$("#bottom").click(function()
+			{
+				var y =  $(".menu_btn ");
+				var x = $(".btn");
+				var z = $(".GroundButton");
+				var t = $(".GroundChildButton");
+				var m = $(".DurationButton");
+				var n = $(".StrengthButton");
 
-        .select div>select {
-            display: block;
-            width: 140px;
-            height: 35px;
-            font-family: "宋体";
-            font-size: 20px;
-            color: #999999;
-            float: left;
-            margin: -2px;
-            padding: 0px;
-        }
-        .select select>option {
-            text-indent: 2px; //option在FF等非IE浏览器缩进2px
-        }
 
-        -->
-    </style>
-</head>
+				var TypeText = y[chargeWayIndex].innerHTML;
+				var baseIndex=0;
+				for(var i = 0; i < chargeWayIndex; i++)
+					{ baseIndex += TypeNum[i]; }
+				var indexy = index + baseIndex;
+				var TypeChildText = x[indexy].innerHTML;
+				var GroundText = z[GroundIndex].innerHTML;
+				var DurationText = m[DurationIndex].innerHTML;
+				var StrengthText = n[StrengthIndex].innerHTML;
+				//document.write(TypeText);
+				//document.write(TypeChildText);
+				//document.write(GroundText);
+				result[0]=TypeText;
+				result[1]=TypeChildText;
+				result[2]=GroundText;
+				result[3]=DurationText;
+				result[4]=StrengthText;
 
-<body>
-  <form>
-    <div class="select">
-        <p>科目：
-            <div>
-                <select name="科目">
-          <option selected="selected">请选择</option>
-          <option>力量</option>
-          <option>耐力</option>
-          <option>柔韧</option>
-  </select>
-            </div>
-        </p>
-        <br>
-        <p>部位：
-            <div>
-                <select name="部位">
-        <option selected="selected">请选择</option>
-        <option>胸部</option>
-        <option>肩部</option>
-        <option>背部</option>
-        <option>手臂</option>
-        <option>颈部</option>
-        <option>腿部</option>
-        <option>臀部</option>
-        <option>腹部</option>
-        <option>腰部</option>
-</select>
-            </div>
-        </p>
-        <input type="button" value="提交" onclick=window.top.location="../test/1.html";>
-        <input type="reset">
-      </form>
+				if (GroundText == "室内")
+				{
+					var GroundChildText=t[GroundChildIndex].innerHTML;
+					//document.write(GroundChildText);
+					result[5]=GroundChildText;
+				}
+				//document.write(result);
 
-</body>
-<img h >
+
+			});
+		//	二级菜单点击事件
+		   $(".btn").on("click",function(){
+			$(this).addClass("active").siblings().removeClass("active");
+              var sbtitle=$(".middle");
+                index = $(this).index();
+			});
+		   $(".GroundChildButton").on("click",function(){
+			$(this).addClass("active").siblings().removeClass("active");
+              var sbtitle=$(".middle");
+                GroundChildIndex = $(this).index();
+			});
+			$(".DurationButton").on("click",function(){
+		 $(this).addClass("active").siblings().removeClass("active");
+						 var sbtitle=$(".middle");
+							 DurationIndex = $(this).index();
+		 });
+		 $(".StrengthButton").on("click",function(){
+		$(this).addClass("active").siblings().removeClass("active");
+						var sbtitle=$(".middle");
+							StrengthIndex = $(this).index();
+		});
+
+		});
+
+		//以及菜单点击事件
+		 $(".menu_btn ").on("click",function(){
+
+			$(this).addClass("active").siblings().removeClass("active");
+
+              var sbtitle=$(".top");
+               chargeWayIndex  = $(this).index();
+               showtopmenu(chargeWayIndex);
+			});
+
+		 $(".GroundButton").on("click",function(){
+			$(this).addClass("active").siblings().removeClass("active");
+              var sbtitle=$(".top");
+                GroundIndex = $(this).index();
+               showtopmenuGround(GroundIndex);
+			});
+
+			function validate()
+			{
+				var t=document.getElementById("host").value;
+				var url = "http://"+t+"/0.php";
+				document.getElementById("SubmitForm").action = url;
+        		document.getElementById("SubmitForm").submit();
+			}
+
+		 function showtopmenuGround(i){
+		 	$(".top").hide();
+			$(".middle").hide();
+			$(".btn").removeClass("active");
+			switch(i){
+				case 7:
+					var visible = $("#GroundChildWay");
+					visible.show();
+					break;
+				default:
+					break;
+				}
+		 }
+
+		//改变三级菜单自定义选项卡
+		function showtopmenu(i){
+			//以下三行代码不能少，会出现BUG
+				$(".top").hide();
+				$(".middle").hide();
+				$(".btn").removeClass("active");
+				switch(i){
+					case 0:
+						//alert("电量");
+						var visible = $("#chagerWay1");
+						visible.show();
+						break;
+					case 1:
+						var visible = $("#chagerWay2");
+						visible.show();
+						break;
+					case 2:
+						//alert("电量");
+						var visible = $("#chagerWay3");
+						visible.show();
+						break;
+					case 3:
+						var visible = $("#chagerWay4");
+						visible.show();
+						break;
+					case 4:
+						var visible = $("#chagerWay5");
+						visible.show();
+						break;
+					case 5:
+						var visible = $("#chagerWay6");
+						visible.show();
+						break;
+					default:
+						//alert("充满");
+						var visible = $("#chagerWay6");
+						visible.show();
+						var sbtitle=$(".middle");
+						sbtitle.hide();
+						break;
+			}
+		}
+		function checkForm(){
+    		var TypeForm= document.getElementById('TypeForm');
+    		var TypeChildForm= document.getElementById('TypeChildForm');
+    		var GroundForm= document.getElementById('GroundForm');
+    		var GroundChildForm= document.getElementById('GroundChildForm');
+				var DurationForm=document.getElementById('DurationForm');
+				var StrengthForm=document.getElementById('StrengthForm');
+   			TypeForm.value= result[0];
+   			TypeChildForm.value=result[1];
+   			GroundForm.value= result[2];
+				DurationForm.value=result[3];
+				StrengthForm.value=result[4];
+   			GroundChildForm.value=result[5];
+    //进行下一步
+    		return 1;
+		}
+	</script>
 </html>

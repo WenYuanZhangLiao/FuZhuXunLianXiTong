@@ -30,28 +30,8 @@
 <body>
     <div id="wrap">
         <div id="main">
-            <div id='slider' class='swipe'>
-                <div class='swipe-wrap'>
-                    <div class="swipe-box" tapmode="tap-active">
-                        <img src="../image/fun_rec_swipe1.png" alt="">
-                    </div>
-                    <div class="swipe-box" tapmode="tap-active">
-                        <img src="../image/fun_rec_swipe2.png" alt="">
-                    </div>
-                    <div class="swipe-box" tapmode="tap-active">
-                        <img src="../image/fun_rec_swipe3.png" alt="">
-                    </div>
-                </div>
-                <div id="title-box">
-                    <ul id="title-box-ul">
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
             <div class="slider_shadow">
-                <img src="../image/fun_rec_swipe1.png" alt="">
+                <img src="" alt="">
             </div>
             <style>
                 .mask {
@@ -66,8 +46,8 @@
             </style>
             <div style="position:relative">
                 <div class="mask"></div>
-                <iframe src="https://www.weaoo.com/cj/index.html?layout=layout2-nostyle" width="260" height="25" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-            </div>
+                <iframe  src="https://www.weaoo.com/cj/index.html?layout=layout1-classic" width="390" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> 
+              </div>
 
 </body>
 <iframe src="../html/frame0/select.html" width="400" height="400">
@@ -79,31 +59,5 @@
 <script type="text/javascript" src="../script/zepto.js"></script>
 <script type="text/javascript" src="../script/swipe.js"></script>
 <script type="text/javascript" src="../script/common.js"></script>
-<script type="text/javascript">
-    apiready = function() {
-        // 轮播图
-        var aLi = $('#title-box-ul li');
-        // var act_title = $('#title-box-text');
-        window.mySwipe = Swipe($api.byId('slider'), {
-            auto: 3000,
-            continuous: true,
-            callback: function(index, elem) {
-
-                var i = aLi.length;
-                while (i--) {
-                    aLi[i].className = '';
-                }
-                aLi[index].className = 'active';
-                // var text = $(elem).find('img').attr('alt');
-                // act_title.text(text);
-            }
-        });
-        $('#slider .swipe-box').on('click', function(event) {
-
-        });
-        // 轮播图 end
-
-    };
-</script>
 
 </html>
