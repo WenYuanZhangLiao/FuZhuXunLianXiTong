@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
@@ -22,17 +23,20 @@
         .slider_shadow img {
             width: 100%;
         }
+        #body {
+          margin-left: 0px;
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          overflow: hidden;
+        }
     </style>
 
 
 </head>
 
 <body>
-    <div id="wrap">
-        <div id="main">
-            <div class="slider_shadow">
-                <img src="" alt="">
-            </div>
+
             <style>
                 .mask {
                     position: absolute;
@@ -44,13 +48,14 @@
                     background: #ffffff
                 }
             </style>
-            <div style="position:relative">
-                <div class="mask"></div>
-                <iframe  src="https://www.weaoo.com/cj/index.html?layout=layout1-classic" width="390" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> 
-              </div>
+
+
+
 
 </body>
-<iframe src="../html/frame0/select.html" width="400" height="400">
+<iframe  src="https://www.weaoo.com/cj/index.html?layout=layout1-classic"  width="100%" height=70 frameborder="0" marginwidth="0" marginheight="0" scrolling="yes"></iframe>
+
+<iframe src="../html/frame0/select.html"  width='100%' height='100%' frameborder="0" marginwidth="0" scrolling="yes" >
 </iframe>
 
 
@@ -60,4 +65,14 @@
 <script type="text/javascript" src="../script/swipe.js"></script>
 <script type="text/javascript" src="../script/common.js"></script>
 
+<script type="text/javascript" language="javascript">
+function iFrameHeight() {
+var ifm= document.getElementById("iframepage");
+var subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument;
+if(ifm != null && subWeb != null) {
+   ifm.height = subWeb.body.scrollHeight;
+   ifm.width = subWeb.body.scrollWidth;
+}
+}
+</script>
 </html>
